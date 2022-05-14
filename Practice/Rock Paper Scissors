@@ -1,4 +1,5 @@
 //make a choice between throwing rock, paper, or scissors.
+
 func getUserChoice (userInput: String) -> String {
   switch userInput {
   case "rock" :
@@ -45,17 +46,18 @@ func determineWinner ( _ userChoice: String, _ compChoice: String) -> String {
     } else if compChoice == "scissors" {
       decision = "The user won"
     }
+    
     case "paper" : 
        if compChoice == "rock" {decision = "The user won"
     } else if compChoice == "scissors" {
       decision = "The computer won"
     }
+    
     case "scissors" : 
       if compChoice == "rock" {decision = "The computer won"
     } else if compChoice == "paper" {
       decision = "The user won"
     }
-
     default : print("Something went wrong")
   }
   return decision 

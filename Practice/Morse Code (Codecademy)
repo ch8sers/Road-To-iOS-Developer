@@ -2,8 +2,7 @@ var englishText = "this is a secret message"
 
 var secretMessage = ".... --- .-- -.. -.--   .--. .- .-. - -. . .-. ..-.."
 
-// Add your code below 🤫
-
+//Create character : morse code library
 var letterToMorse : [String:String] = [
   "a": ".-",
   "b": "-...",
@@ -38,6 +37,7 @@ var letterToMorse : [String:String] = [
 ]
 
 var morseText = ""
+
 
 for element in englishText {
   if let morseChar = letterToMorse["\(element)"]{

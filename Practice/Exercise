@@ -1,0 +1,81 @@
+// Create The Structure of An Exercise and store its' properties
+
+struct Exercise {
+  var name : String
+  var muscleGroups : [String]
+  var reps : Int
+  var sets : Int
+  var totalReps : Int
+
+  init(name: String, muscleGroups: [String], 
+  reps: Int, sets: Int) {
+    self.name = name
+    self.muscleGroups = muscleGroups
+    self.reps = reps
+    self.sets = sets
+    self.totalReps = reps * sets
+  }
+}
+
+//1st Instance of Exercise : Push-Ups
+var pushUp = Exercise(name: "Push Up", 
+muscleGroups: ["Triceps", "Chest", "Shoulders"], reps: 50, sets: 3)
+
+//Practice to see if code works
+/*print("You should do \(pushUp.sets) sets of \(pushUp.reps) \(pushUp.name)s (A Total of \(pushUp.totalReps)) at 3:30 AM")*/
+
+//Create a struct to track the exercise for the day
+struct Regimen {
+  var dayOfWeek : String
+  var exercise : [Exercise] 
+
+//A function to print of Exercise Plan
+func printExercisePlan() {
+  print("Today is \(self.dayOfWeek) and the plan is to: ")
+
+//For each excerise, issue this print statment
+  for exercise in self.exercise {
+    print("Do \(exercise.sets) sets of \(exercise.reps) \(exercise.name)s.")
+    print("That's a total of \(exercise.totalReps) \(exercise.name)s")
+  }
+}
+}
+
+var mondayRegimen = Regimen(dayOfWeek: "Monday", exercise: [pushUp])
+
+mondayRegimen.printExercisePlan()
+
+/*3 Challenges :
+• Create additional Exercise instances.
+• Create additional Regimen instances.
+• Add a mutating method to the Regimen structure   to add exercises.
+*/
+var sitUps = Exercise(name: "Sit-Up", 
+muscleGroups: ["Rectus Abdominis", "Obliques", "Transverse Abdominis"], reps: 100, sets: 3)
+
+var calfRaises = Exercise(name: "Calf Raises", 
+muscleGroups: ["Gastrocnemius", "Soleus"], reps: 100, sets: 3)
+
+var bicepCurls = Exercise(name: "Bicep Curls", 
+muscleGroups: ["Biceps Brachii", "Brachialis", "Brachioradialis"], reps: 30, sets: 3)
+
+var legSquats = Exercise(name: "Squats", 
+muscleGroups: ["Quadriceps", "Hamstrings", "Gluteus Maximus"], reps: 40, sets: 3)
+
+
+var tuesdayRegimen = Regimen(dayOfWeek: "Tuesday", exercise: [sitUps])
+
+tuesdayRegimen.printExercisePlan()
+
+var wednesdayRegimen = Regimen(dayOfWeek: "Wednesday", exercise: [calfRaises])
+
+wednesdayRegimen.printExercisePlan()
+
+var thursdayRegimen = Regimen(dayOfWeek: "Thursday", exercise: [bicepCurls])
+
+thursdayRegimen.printExercisePlan()
+
+var fridayRegimen = Regimen(dayOfWeek: "Friday", exercise: [legSquats])
+
+fridayRegimen.printExercisePlan()
+
